@@ -8,24 +8,35 @@
 
     <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Start">
 
-        <StackLayout Orientation="Horizontal">
-            <Button Text="About" />
-            <Label VerticalOptions="Center">Train Berth Position</Label>
-            <Button Text="Close" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Button Text="About" HorizontalOptions="Start" Clicked="About_Button_Clicked"/>
+            <Label VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Medium" Text="Train Berth Position">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Raleway-Regular" />
+                        <On Platform="Android" Value="Fonts/Raleway-Regular.ttf#Raleway-Regular" />
+                        <On Platform="UWP" Value="Assets/Fonts/Raleway-Regular.ttf#Raleway" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+            <Button Text="Close" HorizontalOptions="End" Clicked="Close_Button_Clicked"/>
         </StackLayout>
 
-        <FlexLayout Direction="Column" AlignItems="Start" JustifyContent="SpaceEvenly">
-            <Label Text="Select Train Class" />
-            <Picker Title="Select Train Class">
+        <FlexLayout Direction="Column" AlignItems="Stretch" JustifyContent="SpaceEvenly">
+            <Picker x:Name="traintype" Title="Select Train Class" SelectedIndexChanged="traintype_SelectedIndexChanged">
                 <Picker.Items>
-                    <x:String>Sleeper Class</x:String>
-                    <x:String>III-tier AC</x:String>
-                    <x:String>II-tier AC</x:String>
-                    <x:String>Second Seating</x:String>
-                    <x:String>Second Seating - JanShatabdi</x:String>
-                    <x:String>Garid Rath</x:String>
+                    <x:String>AC 2 Tier (2A)</x:String>
+                    <x:String>AC 3 Tier (3A)</x:String>
+                    <x:String>Executive Chair Car (EC)</x:String>
+                    <x:String>Garid Rath (3A)</x:String>
+                    <x:String>Second Seating (2S)</x:String>
+                    <x:String>Second Seating - JanShatabdi (2S)</x:String>
+                    <x:String>Shatabdi Executive (1A)</x:String>
+                    <x:String>Sleeper Class (SL)</x:String>
                 </Picker.Items>
             </Picker>
+            <Entry x:Name="seatno" Placeholder="Enter Berth Number" Keyboard="Numeric" />
+            <Button Text="Find" Margin="60,0,60,0" Clicked="Find_Button_Clicked"/>
         </FlexLayout>
 
     </StackLayout>
