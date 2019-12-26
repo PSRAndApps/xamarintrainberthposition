@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TrainBerthPosition.MainPage">
+
+    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Start">
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="About" />
+            <Label VerticalOptions="Center">Train Berth Position</Label>
+            <Button Text="Close" />
+        </StackLayout>
+
+        <FlexLayout Direction="Column" AlignItems="Start" JustifyContent="SpaceEvenly">
+            <Label Text="Select Train Class" />
+            <Picker Title="Select Train Class">
+                <Picker.Items>
+                    <x:String>Sleeper Class</x:String>
+                    <x:String>III-tier AC</x:String>
+                    <x:String>II-tier AC</x:String>
+                    <x:String>Second Seating</x:String>
+                    <x:String>Second Seating - JanShatabdi</x:String>
+                    <x:String>Garid Rath</x:String>
+                </Picker.Items>
+            </Picker>
+        </FlexLayout>
+
+    </StackLayout>
+
+</ContentPage>
