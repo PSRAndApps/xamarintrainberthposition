@@ -18,13 +18,16 @@ namespace TrainBerthPosition
             var htmlSource = new HtmlWebViewSource();
             htmlSource.Html = @"
                                 <html><body>
-                                <h1>About App</h1>
+                                <h1 align='center'>About App</h1>
 				<p><b>Know your Indian train berth/seat position of AC 2 Tier (2A), AC 3 Tier (3A), Executive Chair Car (EC), Garid Rath (3A), Second Seating (2S), 
-                        Second Seating - JanShatabdi (2S), Shatabdi Executive (1A) and Sleeper Class (SL) and for most of the Indian trains.</b></p>
+                        Second Seating - JanShatabdi (2S), Shatabdi Executive (1A) and Sleeper Class (SL) for most of the Indian trains.</b></p>
 				<p>Its completly an <b><u>off-line</u></b> application, which means, no active Internet connection to use this application.</p>
 				<p>Simply download, install and use the app.</p>
 				<p>Just enter your berth/seat number and check it's exact berth position.</p>
-                <p>Note: It doesn't tell your berth/seat PNR confirmation. It only tells you where exactly your seat located in the train coach.</p>
+                <p><i>Note: It doesn't tell your berth/seat PNR confirmation. It shows where exactly the confirmed seat located in the train coach.</i></p>
+
+                <h3>Author</h3><p>Suresh Raju Pilli</p>
+                
                                 </body>
                                 </html>";
             browser.Source = htmlSource;
