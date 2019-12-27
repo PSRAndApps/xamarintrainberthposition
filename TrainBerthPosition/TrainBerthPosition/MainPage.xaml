@@ -6,11 +6,23 @@
              mc:Ignorable="d"
              x:Class="TrainBerthPosition.MainPage">
 
-    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Start">
-
-        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-            <Button Text="About" HorizontalOptions="Start" Clicked="About_Button_Clicked"/>
-            <Label VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Medium" Text="Train Berth Position">
+    <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Start" Margin="5">
+        <StackLayout.Resources>
+            <ResourceDictionary>
+                <Style x:Key="LabelNormalStyle" TargetType="Entry">
+                    <Setter Property="TextColor" Value="{StaticResource NormalTextColor}" />
+                </Style>
+                <Style x:Key="MediumBoldText" TargetType="Button">
+                    <Setter Property="TextColor" Value="{StaticResource ButtonTextColor}" />
+                    <Setter Property="Margin" Value="5"/>
+                    <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}"/>
+                </Style>
+            </ResourceDictionary>
+        </StackLayout.Resources>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource AndroidNavigationBarColor}">
+            <Button Text="About" HorizontalOptions="Start" Clicked="About_Button_Clicked" Style="{StaticResource MediumBoldText}" />
+            <Label VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Subtitle" Text="Train Berth Position" TextColor="GhostWhite">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
                         <On Platform="iOS" Value="Raleway-Regular" />
@@ -19,10 +31,11 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <Button Text="Close" HorizontalOptions="End" Clicked="Close_Button_Clicked"/>
+            <Button Text="Close" HorizontalOptions="End" Clicked="Close_Button_Clicked" Style="{StaticResource MediumBoldText}" />
         </StackLayout>
-
+        
         <FlexLayout Direction="Column" AlignItems="Stretch" JustifyContent="SpaceEvenly">
+            <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5" Opacity="0.5" />
             <Picker x:Name="traintype" Title="Select Train Class" SelectedIndexChanged="traintype_SelectedIndexChanged">
                 <Picker.Items>
                     <x:String>AC 2 Tier (2A)</x:String>
@@ -35,10 +48,34 @@
                     <x:String>Sleeper Class (SL)</x:String>
                 </Picker.Items>
             </Picker>
-            <Entry x:Name="seatno" Placeholder="Enter Berth Number" Keyboard="Numeric" />
-            <Button Text="Find" Margin="60,0,60,0" Clicked="Find_Button_Clicked"/>
+            <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5" Opacity="0.5" />
+            <Label Text="OR" HorizontalTextAlignment="Center"/>
+            <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5" Opacity="0.5" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button ClassId="x0" Text="2AC" x:Name="x0" Grid.Row="0" Grid.Column="0" Clicked="Class_Clicked" />
+                <Button ClassId="x1" Text="3AC" x:Name="x1" Grid.Row="0" Grid.Column="1" Clicked="Class_Clicked" />
+                <Button ClassId="x2" Text="EC" x:Name="x2" Grid.Row="0" Grid.Column="2" Clicked="Class_Clicked" />
+                <Button ClassId="x3" Text="GR" x:Name="x3" Grid.Row="0" Grid.Column="3" Clicked="Class_Clicked" />
+                <Button ClassId="x4" Text="2S" x:Name="x4" Grid.Row="1" Grid.Column="0" Clicked="Class_Clicked" />
+                <Button ClassId="x5" Text="JS-2S" x:Name="x5" Grid.Row="1" Grid.Column="1" Clicked="Class_Clicked" />
+                <Button ClassId="x6" Text="1A" x:Name="x6" Grid.Row="1" Grid.Column="2" Clicked="Class_Clicked" />
+                <Button ClassId="x7" Text="SL" x:Name="x7" Grid.Row="1" Grid.Column="3" Clicked="Class_Clicked" />
+            </Grid>
+            <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5" Opacity="0.5" />
         </FlexLayout>
-
+        
+        <Entry x:Name="seatno" Placeholder="Enter Berth Number" Keyboard="Numeric" />
+        <Button Text="Find" Margin="60,0,60,0" Clicked="Find_Button_Clicked"/>
     </StackLayout>
 
 </ContentPage>

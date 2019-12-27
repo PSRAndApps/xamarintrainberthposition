@@ -39,6 +39,8 @@ namespace TrainBerthPosition
         private static readonly string INFO_MSG1 = "For the number ";
         private static readonly string INFO_MSG2 = ", you have got \n";
         private static readonly string INFO_MSG3 = ".";
+        private Button selectedButton;
+
 
         public MainPage()
         {
@@ -297,6 +299,13 @@ namespace TrainBerthPosition
         private void traintype_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedClass = traintype.SelectedIndex;
+            if(selectedButton != null)
+            { 
+                selectedButton.Style = (Style)Application.Current.Resources["normalButtonStyle"];
+            }
+            selectedButton = (Button)FindByName("x" + selectedClass);
+            selectedButton.Style = (Style)Application.Current.Resources["selectedButtonStyle"];
+            
         }
 
         private async void About_Button_Clicked(object sender, EventArgs e)
@@ -305,11 +314,18 @@ namespace TrainBerthPosition
         }
         private async void Close_Button_Clicked(object sender, EventArgs e)
         {
-            bool response = await DisplayAlert("Closing Application", "You are about to close the app, Do want to continue?", "Yes", "No");
+            bool response = await DisplayAlert("Closing Application", "You are about to close the app, Do want to continue?", "Close", "Cancel");
             if (response)
             {
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
+        }
+
+        private void Class_Clicked(object sender, EventArgs e)
+        {
+            selectedClass = Int32.Parse((sender as Button).ClassId.ToString().Substring(1));
+            traintype.SelectedIndex = selectedClass;
+            //traintype_SelectedIndexChanged(sender, e);
         }
     }
 }
