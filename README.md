@@ -1,37 +1,14 @@
-## Welcome to GitHub Pages
+# Train Berth Position with Xamarin
+By entering the train berth number, you will be getting the berth/seat position of the following classes
+1. AC 2 Tier (2A)
+2. AC 3 Tier (3A)
+3. Executive Chair Car (EC)
+4. Garid Rath (3A)
+5. Second Seating (2S), 
+6. Second Seating - JanShatabdi (2S)
+7. Shatabdi Executive (1A)
+8. Sleeper Class (SL)
 
-You can use the [editor on GitHub](https://github.com/psrdotcom/xamarintrainberthposition/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Indian Train Berth Reservation Scenario: You have to book ticket long before your journey else you may end up with some waiting list and if you are lucky you will get the berth. But problem arises here is, you berth preference may not match with the actual berth/seat allocated to you. That to, when your PNR was in waiting list and when it gets confirmed. You might be thinking of which berth position you got. Sometimes, your parents or children berth position matters to you. According to the berth position, you may plan the packing things.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/psrdotcom/xamarintrainberthposition/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+I have thought of this and just created a single page offline mobile application which is freely distributed in market, when I found very good response to my blogpost "Know Your Indian Train Berth Positioin".
