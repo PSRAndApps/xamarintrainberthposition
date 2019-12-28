@@ -8,11 +8,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <!-- Colors -->
-            <Color x:Key="HeaderColor">#6002ee</Color>
-            <Color x:Key="NormalTextColor">#ffffff</Color>
-            <Color x:Key="AppBackgroundColor">#004d40</Color>
+            <Color x:Key="HeaderColor">#283593</Color>
+            <Color x:Key="NormalTextColor">#000000</Color>
+            <Color x:Key="AppBackgroundColor">#e0e0e0</Color>
             <Color x:Key="iOSNavigationBarColor">WhiteSmoke</Color>
-            <Color x:Key="AndroidNavigationBarColor">#01579b</Color>
+            <Color x:Key="AndroidNavigationBarColor">#001064</Color>
             <Color x:Key="iOSNavigationBarTextColor">Black</Color>
             <Color x:Key="AndroidNavigationBarTextColor">#ffffff</Color>
             <Color x:Key="ButtonTextColor">#2F3E46</Color>

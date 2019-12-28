@@ -17,11 +17,19 @@
                     <Setter Property="Margin" Value="5"/>
                     <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}"/>
                 </Style>
+                <Style x:Key="EntryStyle" TargetType="Entry">
+                    <Setter Property="PlaceholderColor" Value="{StaticResource NormalTextColor}" />
+                    <Setter Property="TextColor" Value="{StaticResource NormalTextColor}"/>
+                </Style>
+                <Style x:Key="PickerStyle" TargetType="Picker">
+                    <Setter Property="TitleColor" Value="{StaticResource NormalTextColor}" />
+                    <Setter Property="TextColor" Value="{StaticResource NormalTextColor}"/>
+                </Style>
             </ResourceDictionary>
         </StackLayout.Resources>
         
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="{StaticResource AndroidNavigationBarColor}">
-            <Button Text="About" HorizontalOptions="Start" Clicked="About_Button_Clicked" Style="{StaticResource MediumBoldText}" />
+            <Button Text="About" HorizontalOptions="Start" WidthRequest="70" Clicked="About_Button_Clicked" Style="{StaticResource MediumBoldText}" />
             <Label VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Subtitle" Text="Train Berth Position" TextColor="GhostWhite">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
@@ -31,12 +39,12 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <Button Text="Close" HorizontalOptions="End" Clicked="Close_Button_Clicked" Style="{StaticResource MediumBoldText}" />
+            <Button Text="Close" HorizontalOptions="End" WidthRequest="70" Clicked="Close_Button_Clicked" Style="{StaticResource MediumBoldText}" />
         </StackLayout>
         
         <FlexLayout Direction="Column" AlignItems="Stretch" JustifyContent="SpaceEvenly">
             <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5" Opacity="0.5" />
-            <Picker x:Name="traintype" Title="Select Train Class" SelectedIndexChanged="traintype_SelectedIndexChanged">
+            <Picker x:Name="traintype" Title="Select Train Class" SelectedIndexChanged="traintype_SelectedIndexChanged" Style="{StaticResource PickerStyle}">
                 <Picker.Items>
                     <x:String>AC 2 Tier (2A)</x:String>
                     <x:String>AC 3 Tier (3A)</x:String>
@@ -49,7 +57,7 @@
                 </Picker.Items>
             </Picker>
             <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5" Opacity="0.5" />
-            <Label Text="OR" HorizontalTextAlignment="Center"/>
+            <Label Text="OR" HorizontalTextAlignment="Center" Style="{StaticResource LabelNormalStyle}"/>
             <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5" Opacity="0.5" />
             <Grid>
                 <Grid.RowDefinitions>
@@ -73,8 +81,8 @@
             </Grid>
             <BoxView BackgroundColor="Gray" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="0,5" Opacity="0.5" />
         </FlexLayout>
-        
-        <Entry x:Name="seatno" Placeholder="Enter Berth Number" Keyboard="Numeric" />
+
+        <Entry x:Name="seatno" Placeholder="Enter Berth Number" Keyboard="Numeric" Style="{StaticResource EntryStyle}" />
         <Button Text="Find" Margin="60,0,60,0" Clicked="Find_Button_Clicked"/>
     </StackLayout>
 
