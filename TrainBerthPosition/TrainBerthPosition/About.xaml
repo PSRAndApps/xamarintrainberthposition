@@ -7,11 +7,7 @@
              x:Class="TrainBerthPosition.About">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Back" HorizontalOptions="StartAndExpand" Clicked="OnBackButtonClicked" />
-            </StackLayout>
-            <!-- WebView needs to be given height and width request within layouts to render. -->
-            <WebView x:Name="webView" WidthRequest="720" HeightRequest="1000" />
+            <WebView x:Name="webView" WidthRequest="720" MinimumHeightRequest="50" VerticalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

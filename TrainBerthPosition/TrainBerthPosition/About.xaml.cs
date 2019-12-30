@@ -14,7 +14,11 @@ namespace TrainBerthPosition
     {
         public About()
         {
-            var browser = new WebView();
+            var titleView = new Label{ Text="Home", HeightRequest=30, WidthRequest=50, TextColor=Color.WhiteSmoke, FontSize=20.0 };
+            NavigationPage.SetTitleView(this, titleView);
+
+            WebView webView = new WebView();
+            webView.MinimumHeightRequest = 50;
             var htmlSource = new HtmlWebViewSource();
             htmlSource.Html = @"
                                 <html><body>
@@ -30,13 +34,8 @@ namespace TrainBerthPosition
                 
                                 </body>
                                 </html>";
-            browser.Source = htmlSource;
-            Content = browser;
-        }
-
-        async void OnBackButtonClicked(Object sender, EventArgs e)
-        {
-            await Navigation.PopAsync();
+            webView.Source = htmlSource;
+            Content = webView;
         }
     }
 }

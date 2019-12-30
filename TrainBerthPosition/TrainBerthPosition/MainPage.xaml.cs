@@ -41,21 +41,26 @@ namespace TrainBerthPosition
         private static readonly string INFO_MSG3 = ".";
         private Button selectedButton;
 
-
         public MainPage()
         {
             InitializeComponent();
+            //NavigationPage.SetBackButtonTitle(this, "Home");
         }
 
         private async void Find_Button_Clicked(object sender, EventArgs e)
         {
             selectedClass = traintype.SelectedIndex;
-            berthNo = Int32.Parse(seatno.Text);
-            displayText = calculateBerth(selectedClass, berthNo);
-            await DisplayAlert("Berth/Seat Position", displayText, "OK");
+            if (selectedClass == -1 || string.IsNullOrEmpty(seatno.Text))
+            { await DisplayAlert("Invalid Input", "Please select valid train class and valid seat number", "OK"); }
+            else
+            {
+                berthNo = Int32.Parse(seatno.Text);
+                displayText = calculateBerth(selectedClass, berthNo);
+                await DisplayAlert("Berth/Seat Position", displayText, "OK");
 
-            // Clear entry field
-            seatno.Text = "";
+                // Clear entry field
+                seatno.Text = "";
+            }
         }
 
         private string calculateBerth(int selectedClass, int berthNo)
@@ -299,19 +304,19 @@ namespace TrainBerthPosition
         private void traintype_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedClass = traintype.SelectedIndex;
-            if(selectedButton != null)
-            { 
+            if (selectedButton != null)
+            {
                 selectedButton.Style = (Style)Application.Current.Resources["normalButtonStyle"];
             }
             selectedButton = (Button)FindByName("x" + selectedClass);
             selectedButton.Style = (Style)Application.Current.Resources["selectedButtonStyle"];
-            
         }
 
         private async void About_Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new About());
+            await Navigation.PushAsync(new About());
         }
+
         private async void Close_Button_Clicked(object sender, EventArgs e)
         {
             bool response = await DisplayAlert("Closing Application", "You are about to close the app, Do want to continue?", "Close", "Cancel");
@@ -325,7 +330,6 @@ namespace TrainBerthPosition
         {
             selectedClass = Int32.Parse((sender as Button).ClassId.ToString().Substring(1));
             traintype.SelectedIndex = selectedClass;
-            //traintype_SelectedIndexChanged(sender, e);
         }
     }
 }

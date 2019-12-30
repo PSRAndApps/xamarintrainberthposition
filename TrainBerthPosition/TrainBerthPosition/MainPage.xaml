@@ -33,7 +33,7 @@
             <Label VerticalOptions="Center" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Subtitle" Text="Train Berth Position" TextColor="GhostWhite">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Raleway-Regular" />
+                        <On Platform="iOS" Value="Fonts/Raleway-Regular" />
                         <On Platform="Android" Value="Fonts/Raleway-Regular.ttf#Raleway-Regular" />
                         <On Platform="UWP" Value="Assets/Fonts/Raleway-Regular.ttf#Raleway" />
                     </OnPlatform>
